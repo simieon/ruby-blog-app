@@ -1,0 +1,67 @@
+// Place all the styles related to the Todo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.big_text{
+  color: green;
+}
+
+.px1{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mt2{
+  margin-top: 2rem;
+}
+
+.todo {
+  margin-bottom: 1rem;
+}
+
+.todo.completed span{
+  text-decoration: line-through;
+}
+
+.todo label{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+
+.todo{
+  list-style-type: none;
+}
+
+.todo i{
+  z-index: 3;
+}
+
+ul{
+  padding: 0 !important;
+}
+
+.text-1-6{
+  font-size: 1.6rem;
+}
+
+.is_completed{
+  transform: scale(2);
+  margin: 0.3rem;
+}
+
+.todo-text{
+  font-family: 'Inter', sans-serif;
+}
+
+.mr-1{
+  margin-right: 0.5rem;
+}
+
+.pointer{
+  cursor: pointer;
+}

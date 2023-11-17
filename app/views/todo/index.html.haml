@@ -1,0 +1,28 @@
+.container.mt-3.px-5
+  %form#new-todo-form{method: "post"}
+    = hidden_field_tag "page", params[:page], value: 1
+    .row
+      .col
+        %label.mt-1{for: "deadline"} Deadline:
+        %input#deadline.form-control{required: "",type: "date", placeholder: "Enter a deadline", name:"deadline"}/
+
+    .row
+      .col
+        %input.form-control.mt-3{required: "",name: "text", placeholder: "Enter a task here", type: "text"}/
+  %hr.my-5
+  .row
+    %h3.mb-3
+      Filters:
+    .col-8
+      %form#showByForm.d-flex.justify-content-between{method: 'get', action: '/todo'}
+        %span.w-5
+          Show up:
+        %input#showBy.form-control.mx-4{required: "", type: "date", placeholder: "Show up to selected date", name:"show_up_date"}/
+        %button.btn.btn-primary{type: 'submit'}
+          Apply
+  %hr.my-5
+
+
+
+  = render 'todoList'
+

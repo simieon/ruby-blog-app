@@ -1,0 +1,14 @@
+- unless @todos.present?
+    %h3.text-center="No todos here yet..."
+- grouped_todos = @todos.group_by {|todo| todo.deadline}
+- grouped_todos.keys.sort.each do |deadline|
+    %h3.my-4= deadline
+    %ul
+        - grouped_todos[deadline].each do |todo|
+            %li.todo{class: "#{todo.is_completed ? "opacity-50" : ""}",key: "#{todo.id}"}
+                %label.task_label
+                    %input.is_completed{type: "checkbox", name: "is_completed", checked: todo.is_completed}/
+                    %span.todo-text.text-1-6{class: "#{todo.is_completed ? "text-decoration-line-through":""}"}= todo.text
+                    = link_to todo_path(todo), method: :delete, data: { confirm: "Are you sure?"} do
+                        %i.bi.bi-trash.text-danger.text-1-6
+
